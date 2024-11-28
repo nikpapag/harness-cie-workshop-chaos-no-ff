@@ -318,10 +318,12 @@ The target infrastructure has been pre-created for us and we used it in the prev
 **Steps**
 
 1. From the module selection menu select chaos engineering
-![][image1]
-3. From the left hand menu, go to **Project Settings**![]
-4. From the available tiles select “Discovery”
-5. After expanding the side menu of the “DA-K8s” agent click on “Discover Now”
+
+![Screenshot 2024-11-28 at 14 07 39](https://github.com/user-attachments/assets/5c520265-658f-4953-a95c-7a5c3c57ecdf)
+
+4. From the left hand menu, go to **Project Settings**![]
+5. From the available tiles select “Discovery”
+6. After expanding the side menu of the “DA-K8s” agent click on “Discover Now”
 
 
 **Create Application Map**
@@ -393,10 +395,13 @@ The target infrastructure has been pre-created for us and we used it in the prev
 **Embed chaos experiments into CD pipelines**
 
 1. From the module selection menu select Continuous Delivery & GitOps
-2. From the left hand side menu select pipelines and drill down to the existing pipeline
-3. In the existing pipeline, within the Deploy backend stage **after** Canary Deployment and **before** the approval step click on the plus icon to add a new step
+   ![Screenshot 2024-11-28 at 14 07 22](https://github.com/user-attachments/assets/898ee27b-7369-47c6-a145-e74b49bb4bed)
+   
+3. From the left hand side menu select pipelines and drill down to the existing pipeline
 
-4. Add a **Verify** step with the following configuration
+4. In the existing pipeline, within the Deploy backend stage **after** Canary Deployment and **before** the approval step click on the plus icon to add a new step
+
+5. Add a **Verify** step with the following configuration
 
 | Input                        | Value  | Notes                                                                                            |
 | ---------------------------- | ------ | ------------------------------------------------------------------------------------------------ |
