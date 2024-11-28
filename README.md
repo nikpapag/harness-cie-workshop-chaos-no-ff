@@ -321,7 +321,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
    ![Screenshot 2024-11-28 at 14 07 39](https://github.com/user-attachments/assets/5c520265-658f-4953-a95c-7a5c3c57ecdf)
 
-4. From the left hand menu, go to **Project Settings**![]
+4. From the left hand menu, go to **Project Settings**
 5. From the available tiles select “Discovery”
 6. After expanding the side menu of the “DA-K8s” agent click on “Discover Now”
    ![Screenshot 2024-11-28 at 14 23 49](https://github.com/user-attachments/assets/05671080-0e6d-4d93-9298-16aa7f7e7824)
