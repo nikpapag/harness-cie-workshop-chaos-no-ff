@@ -360,9 +360,9 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | Name                         |pod-memory|
 
 3. Select **Harness Infra**
-   ![Screenshot 2024-11-28 at 14 24 21](https://github.com/user-attachments/assets/c47834a3-fe88-44ed-be7e-7cee97bcb303)
+![Screenshot 2024-11-28 at 14 24 21](https://github.com/user-attachments/assets/c47834a3-fe88-44ed-be7e-7cee97bcb303)
 
-4. On the popup window select the available options
+5. On the popup window select the available options
 
 | Input                        | Value|  
 | ---------------------------- | ------ |
