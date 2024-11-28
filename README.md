@@ -400,13 +400,16 @@ The target infrastructure has been pre-created for us and we used it in the prev
 **Embed chaos experiments into CD pipelines**
 
 1. From the module selection menu select Continuous Delivery & GitOps
+
+
    ![Screenshot 2024-11-28 at 14 07 22](https://github.com/user-attachments/assets/898ee27b-7369-47c6-a145-e74b49bb4bed)
+
    
-3. From the left hand side menu select pipelines and drill down to the existing pipeline
+2. From the left hand side menu select pipelines and drill down to the existing pipeline
 
-4. In the existing pipeline, within the Deploy backend stage **after** Canary Deployment and **before** the approval step click on the plus icon to add a new step
+3. In the existing pipeline, within the Deploy backend stage **after** Canary Deployment and **before** the approval step click on the plus icon to add a new step
 
-5. Add a **Verify** step with the following configuration
+4. Add a **Verify** step with the following configuration
 
 | Input                        | Value  | Notes                                                                                            |
 | ---------------------------- | ------ | ------------------------------------------------------------------------------------------------ |
@@ -416,8 +419,11 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | Duration                     |10mins|                                                                                                  |
 
 5. Under the verify step click on the plus icon to add a new step in parallel
+
+
    ![Screenshot 2024-11-28 at 14 28 38](https://github.com/user-attachments/assets/368ba808-d303-43f8-8824-5d2e09367b01)
 
+   
 6. Add a **chaos** step with the following configuration
 
 | Input                        | Value  |
