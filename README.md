@@ -376,6 +376,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | Name |backend-&lt;project_name&gt;-deployment-canary| &lt;project_name&gt; is a placeholder replace with your project |
 
 10. Tune Fault
+
 | Input       | Value |
 | ----------- | ----- |
 | Total Chaos Duration |300|
@@ -405,6 +406,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 5. Under the verify step click on the plus icon to add a new step in parallel
 6. Add a **chaos** step with the following configuration
+
 | Input                        | Value  |
 | ---------------------------- | ------ |
 | Name                         |Chaos|
