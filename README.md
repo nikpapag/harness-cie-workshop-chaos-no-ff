@@ -324,7 +324,9 @@ The target infrastructure has been pre-created for us and we used it in the prev
 4. From the left hand menu, go to **Project Settings**
 5. From the available tiles select “Discovery”
 6. After expanding the side menu of the “DA-K8s” agent click on “Discover Now”
-   ![Screenshot 2024-11-28 at 14 23 49](https://github.com/user-attachments/assets/05671080-0e6d-4d93-9298-16aa7f7e7824)
+
+  ![image](https://github.com/user-attachments/assets/be1a029d-9b4e-4971-9519-f284ba75c815)
+
 
 
 **Create Application Map**
