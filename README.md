@@ -319,11 +319,12 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 1. From the module selection menu select chaos engineering
 
-![Screenshot 2024-11-28 at 14 07 39](https://github.com/user-attachments/assets/5c520265-658f-4953-a95c-7a5c3c57ecdf)
+   ![Screenshot 2024-11-28 at 14 07 39](https://github.com/user-attachments/assets/5c520265-658f-4953-a95c-7a5c3c57ecdf)
 
 4. From the left hand menu, go to **Project Settings**![]
 5. From the available tiles select “Discovery”
 6. After expanding the side menu of the “DA-K8s” agent click on “Discover Now”
+   ![Screenshot 2024-11-28 at 14 23 49](https://github.com/user-attachments/assets/05671080-0e6d-4d93-9298-16aa7f7e7824)
 
 
 **Create Application Map**
@@ -359,6 +360,8 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | Name                         |pod-memory|
 
 3. Select **Harness Infra**
+   ![Screenshot 2024-11-28 at 14 24 21](https://github.com/user-attachments/assets/c47834a3-fe88-44ed-be7e-7cee97bcb303)
+
 4. On the popup window select the available options
 
 | Input                        | Value|  
@@ -411,6 +414,8 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | Duration                     |10mins|                                                                                                  |
 
 5. Under the verify step click on the plus icon to add a new step in parallel
+   ![Screenshot 2024-11-28 at 14 28 38](https://github.com/user-attachments/assets/368ba808-d303-43f8-8824-5d2e09367b01)
+
 6. Add a **chaos** step with the following configuration
 
 | Input                        | Value  |
