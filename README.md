@@ -91,7 +91,8 @@
 | Name              |Push to DockerHub|                                                                          |
 | Docker Connector  |dockerhub|                                                                          |
 | Docker Repository |nikpap/harness-workshop|                                                                          |
-| Tags              |<+variable.username>-<+pipeline.sequenceId>| This will be the tag of the image using harness expressions              |
+| Tags              |<+variable.username>-<+pipeline.sequenceId>| This will be the tag of the image using harness expressions. Click on the pin and select expression and paste the value              |
+| **Optional  Configuration** |                                            |                                                                                                                                                   |
 | Dockerfile        |/harness/frontend-app/harness-webapp/Dockerfile| This tells harness where is the Dockerfile for building the app          |
 | Context           |/harness/frontend-app/harness-webapp| This tells from where to run the instructions included in the dockerfile |
 
@@ -136,7 +137,7 @@
 
 7. Select **OWASP**
 
-8. Name the step OWASP
+8. Name the step **OWASP**
 
 9. Click **Save** and then click **Run** to execute the pipeline with the following inputs
 
@@ -200,21 +201,23 @@ After the **Build and Push** stage is complete, go to the **Security Tests** tab
 | Docker Registry Connector  |dockerhub|                                    |
 | Artifact Source Identifier |frontend|                                    |
 | Image Path                 |nikpap/harness-workshop|                                    |
-| Tag                        |<+variable.username>-<+pipeline.sequenceId>| _Select value, then click on the pin and select expression and paste the value |
+| Tag                        |<+variable.username>-<+pipeline.sequenceId>| Select value, then click on the pin and select expression and paste the value |
+
+- Click **Save** to close the service window and then click **Continue** to go to the Environment tab
 
 **Environment**
 
 The target infrastructure has been pre-created for us. The application will be deployed to a k8s cluster on the given namespace  
 
-- Click **- Select -** on the environment input box ****
+- Click **- Select -** on the **"Specify Environment"** input box 
 
-- Select **prod** environment****
+- Select **prod** environment and click **"Apply Selected"**
 
 | Input | Value | Notes                                                             |
 | ----- | ----- | ----------------------------------------------------------------- |
 | Name  |prod| Make sure to select the environment and infrastructure definition |
 
-- Click **- Select -** on the environment input box ****
+- Click **- Select -** on the **"Specify Infrastructure"** input box
 
 -  From the dropdown select k8s
 
@@ -224,9 +227,11 @@ The target infrastructure has been pre-created for us. The application will be d
 | ----- | ----- | ----- |
 | Name  |k8s|       |
 
-**Execution**
+- Click **Continue** 
 
-- Select **Rolling** and click on **Use Strategy**, the frontend is a static application so no need to do canary, new features will be managed by Feature Flags at a later stage of this lab
+**Execution Strategies**
+
+- Select **Rolling** and click on **Use Strategy**, the frontend is a static application so no need to do canary.
 
 
 # Lab 4 - Continuous Deploy - Backend
@@ -252,12 +257,14 @@ The target infrastructure has been pre-created for us. The application will be d
 7. Configure the **backend** Stage with the following\
    **Service**
 
-- Click **Select Service** and configure as follows****
+- Click **- Select -**  on the **"Select Service"** input box and configure as follows:
 
 
 | Input | Value       | Notes |
 | ----- | ----------- | ----- |
 | Name  |backend|       |
+
+- Click **Apply Selected** and then click **Continue** to go to the **"Environment"** tab
 
 **Environment**
 
@@ -267,24 +274,19 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 - Select **Stage \[frontend]**
 
+- Click **Continue**
+
 **Execution**
 
 - Select **Canary**  and click on **Use Strategy**
 
 - **After** the canary deployment and **before** the canary delete step add **Harness Approval** step according to the table  below
 
-| Input            | Value            | Notes |
-| ---------------- | ---------------- | ----- |
-| Step Name        |Approval|       |
-| Type of Approval |Harness Approval|       |
-
-- Configure the Approval step as follows
-
 | Input       | Value             | Notes |
 | ----------- | ----------------- | ----- |
 | Name        |Approval|       |
-| User Groups |All Project Users|       |
-
+| User Groups |All Project Users|     Select project to see the **"All Project Users"** option   |
+- Click **Apply Changes**
 
 8. Click **Save** and then click **Run** to execute the pipeline with the following inputs. As a bonus, save your inputs as an Input Set before executing (see below)
 
@@ -364,6 +366,8 @@ The target infrastructure has been pre-created for us and we used it in the prev
 3. Select **Harness Infra**
 
   ![Screenshot 2024-11-28 at 14 24 21](https://github.com/user-attachments/assets/c47834a3-fe88-44ed-be7e-7cee97bcb303)
+
+  - Click on **"Select a chaos Infrastructure"**
 
  
 4. On the popup window select the available options
@@ -461,7 +465,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | ---------------------- | ------------- | ------ |
 | http\://\<project\_id>|.cie-bootcamp|.co.uk|
 
-- Drill down to the distribution test tab and run the traffic generation by clicking the **Play** button
+- Drill down to the distribution test tab and run the traffic generation by clicking the **Start** button
 
 - Observe the traffic distribution
 
@@ -589,8 +593,3 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | Payload     |{"NODE\_OSS\_CRITICAL\_COUNT": _\<variable>_}| Set the field type to Expression, then replace _\<variable>_ with OWASP output variable CRITICAL. Go to a previous execution to copy the variable path. |
 
 5. Save the pipeline and execute. Note that the pipeline fails at the policy evaluation step due to critical vulnerabilities being found by OWASP.
-
-
-
-
-
