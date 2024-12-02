@@ -334,12 +334,12 @@ The target infrastructure has been pre-created for us and we used it in the prev
 **Create Application Map**
 
 1. After discovery is complete double click on the agent “DA-K8s”
-   
-   <img width="862" alt="Screenshot 2024-12-02 at 16 42 25" src="https://github.com/user-attachments/assets/3094b76d-1d27-429d-ab67-0fdb8e978894">
+
+   ![image](https://github.com/user-attachments/assets/3094b76d-1d27-429d-ab67-0fdb8e978894)
 
 
-2. Select the "Application Maps" tab
-3. Click on **Create New Application Map** and enter the following values
+1. Select the "Application Maps" tab
+2. Click on **Create New Application Map** and enter the following values
 
 | Input                        | Value|  
 | ---------------------------- | ------ |
