@@ -401,8 +401,8 @@ The target infrastructure has been pre-created for us and we used it in the prev
 12. Select the default probe and click on **Add to Fault**
 13. For the probe mode select **Continuous** and click on **Apply Changes**
 14. Save the experiment
-15. A popup window will appear asking to override registry values, click on **Ignore**
-   ![Screenshot 2024-12-02 at 16 33 43] (https://github.com/user-attachments/assets/352b2c9c-3f1a-4d4b-be17-29e58b87196e)
+15. On the popup window click on **Ignore**
+   ![Screenshot 2024-12-02 at 16 33 43](https://github.com/user-attachments/assets/352b2c9c-3f1a-4d4b-be17-29e58b87196e)
 
 
 
