@@ -333,17 +333,16 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 **Create Application Map**
 
-1. Wait for the discovery agent to complete (usually 1-2 minutes)
-2. After discovery is complete double click on the agent “DA-K8s”
-3. Select the "Application Maps" tab
-4. Click on **Create New Application Map** and enter the following values
+1. After discovery is complete double click on the agent “DA-K8s”
+2. Select the "Application Maps" tab
+3. Click on **Create New Application Map** and enter the following values
 
 | Input                        | Value|  
 | ---------------------------- | ------ |
 | Name                         |workshop-am|
 
-5. Select the relevant services for your project name "use the search function to find the services"
-6. Click Save
+4. Select the relevant services for your project name "use the search function to find the services"
+5. Click Save
 
 **Create Experiments Automatically**
 
@@ -402,6 +401,10 @@ The target infrastructure has been pre-created for us and we used it in the prev
 12. Select the default probe and click on **Add to Fault**
 13. For the probe mode select **Continuous** and click on **Apply Changes**
 14. Save the experiment
+15. A popup window will appear asking to override registry values, click on **Ignore**
+   ![Screenshot 2024-12-02 at 16 33 43] (https://github.com/user-attachments/assets/352b2c9c-3f1a-4d4b-be17-29e58b87196e)
+
+
 
 **Embed chaos experiments into CD pipelines**
 
