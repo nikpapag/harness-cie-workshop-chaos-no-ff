@@ -389,7 +389,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | Input       | Value | Notes       |
 | ----------- | ----- | ----------- |
 | Select App Kind |deployment| Leave as is |
-| Namespace |**_&lt;org_prefix&gt;-ns_** | org_prefix is a placeholder, example: **org_id: lab73org**, **org_prefix=lab73**, **namespace: lab73-ns**|
+| Namespace |**select from the dropdown** | |
 | Name |backend-&lt;project_name&gt;-deployment-canary| &lt;project_name&gt; is a placeholder replace with your project |
 
 10. Tune Fault
