@@ -390,7 +390,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | ----------- | ----- | ----------- |
 | Select App Kind |deployment| Leave as is |
 | Namespace |**select from the dropdown** | |
-| Name |backend-&lt;project_name&gt;-deployment-canary| &lt;project_name&gt; is a placeholder replace with your project |
+| Name |**select the backend service from the dropdown**| We will change that later |
 
 10. Tune Fault
 
@@ -405,9 +405,14 @@ The target infrastructure has been pre-created for us and we used it in the prev
 12. Select the default probe and click on **Add to Fault**
 13. For the probe mode select **Continuous** and click on **Apply Changes**
 14. Save the experiment
-15. On the popup window click on **Ignore**
 
-![Screenshot 2024-12-02 at 17 11 26](https://github.com/user-attachments/assets/03b86d6b-1ae2-4f6d-890b-3d7c1579caa7)
+**Change target service to canary using YAML**
+
+1. From the pipeline visual editor switch to yaml
+2. Click the edit button to go into edit mode
+3. Locate the service name (set on previous state)
+4. Replace it with **backend-<project_name>-deployment-canary** where project_name is the harness project
+5. Save the experiment
 
 
 **Embed chaos experiments into CD pipelines**
