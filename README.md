@@ -49,20 +49,16 @@
 
 **Execution**
 
-- Select **Add Step**, then **Add Step** again, then select **Run Tests** from the Step Library and configure with the following
+- Select **Add Step**, then **Add Step** again, then select **Test Intelligence** from the Step Library and configure with the following
 
 
 
 | Input                        | Value                                      | Notes                                                                                                                                             |
 | ---------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Name                         |Run Tests With Intelligence|                                                                                                                                                   |
-| Language                     |Python|                                                                                                                                                   |
-| Build Tool                   |Pytest|                                                                                                                                                   |
-| Build Arguments              | Leave empty                                | Harness recognises the framework “pytest” and will fill in the gaps at runtime                                                                    |
-| Test Report Paths            | Leave empty                                | Harness automatically parses the current directory to identify test results                                                                       |
-| **Additional Configuration** |                                            |                                                                                                                                                   |
-| Pre-Command                  |pip install pytest & cd ./python-tests| The github repo is a monorepo with application(s) and configuration in the same repo. Therefore we need to navigate to the application subfolder. |
-| Run only selected tests      |Enabled| Activate Test Intelligence                                                                                                                        |
+| Name                         |Run Tests With Intelligence|                                                                                                                                                   |                                   |
+| Command                  |pip install pytest & cd ./python-tests| The github repo is a monorepo with application(s) and configuration in the same repo. Therefore we need to navigate to the application subfolder. |                                                                                                                 |
+
+
 
 - After completing configuration select **Apply Changes** from the top right of the configuration popup
 
