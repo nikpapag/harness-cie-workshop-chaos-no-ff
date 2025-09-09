@@ -467,6 +467,9 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 - Use complex deployment strategies to reduce the blast radius
 
+**Outcomes**
+- Force failure of continuous delivery validation using chaos engineering
+
 **Steps**:
 
 - While the canary deployment is ongoing navigate to the web page and see if you can spot the canary (use the check release button) 
