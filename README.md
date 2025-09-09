@@ -378,17 +378,18 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 5. Click on next to navigate to the experiment builder
 6. Start with blank canvas
-7. Click on **Add**
+7. Click on **Add Fault**
 8. From the list of available faults select **Pod Memory Hog**
-9. Target Application Inputs (Warning: Read the notes on the table below)
+9. From the navigation bar select **Target Application**
 
 | Input       | Value | Notes       |
 | ----------- | ----- | ----------- |
 | Select App Kind |deployment| Leave as is |
 | Namespace |**select from the dropdown** | |
+| Target Workload Labels| leave empty | |
 | Name |**select the backend service from the dropdown**| We will change that later |
 
-10. Tune Fault
+10. From the navigation bar select **Tune Fault**
 
 | Input       | Value |
 | ----------- | ----- |
@@ -397,17 +398,18 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | Number of workers |1|
 | Pod affected percentage|100|
 
-11. For the probes click on +Select or Add new probes
-12. Select the default probe and click on **Add to Fault**
-13. For the probe mode select **Continuous** and click on **Apply Changes**
-14. Save the experiment
+11. Click on **Apply Changes** and then **Save**
+12. In the pipeline click the **Add** icon and select **Add a probe**
+13. Select the default probe and click on **Add to Experiment**
+14. Click on **Apply Changes**
+15. **Save** the experiment
 
 **Change target service to canary using YAML**
 
 1. From the pipeline visual editor switch to yaml
 2. Click the edit button to go into edit mode
-3. Locate the service name (set on previous state)
-4. Replace it with **backend-<project_name>-deployment-canary** where project_name is the harness project
+3. Locate the service name (set on previous state) **TARGET_WORKLOAD_NAMES**
+4. Replace it with **backend-<project_name>-deployment-canary** where project_name is the harness project. Summary: add the suffic **-canary** to the target workload
 5. Save the experiment
 
 
