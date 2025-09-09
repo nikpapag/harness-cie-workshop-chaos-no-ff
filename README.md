@@ -300,7 +300,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 10. Approve the canary deployment for the pipeline to complete
 
-# Lab 6 - Chaos Engineering
+# Lab 5 - Chaos Engineering
 
 
 ### Summary: Fully integrated chaos experiments with the delivery process
@@ -457,7 +457,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | Branch Name |main| Leave as is |
 
 
-# Lab 7 - Validate Release
+# Lab 6 - Validate Release
 
 **Learning Objective(s):**
 
@@ -492,7 +492,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 - Add a canary rollout from 10% to 50% traffic and see how this impacts the traffic distribution
 
 
-# Lab 8 - Governance/Policy as Code
+# Lab 7 - Governance/Policy as Code
 
 ### Summary: Create and apply policies as code in order to enable governance and promote self-service. In Lab 2 we saw how a user is impacted by policies in place, now is the time to create such policies
 
@@ -551,7 +551,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 10. Click **Save** and note that the save succeeds without any policy failure
 
 
-# Lab 9 - Governance/Policy as Code (Advanced)
+# Lab 8 - Governance/Policy as Code (Advanced)
 
 **Create a Policy to block critical CVEs**
 
