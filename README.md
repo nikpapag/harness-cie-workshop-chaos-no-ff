@@ -344,43 +344,14 @@ The target infrastructure has been pre-created for us and we used it in the prev
 4. Select the relevant services for your project name "use the search function to find the services"
 5. Click Save
 
-**Create Chaos Experiment**
 
-| Input                        | Value|  
-| ---------------------------- | ------ |
-| Name                         |pod-delete|
+**Auto Generate Chaos Experiments**
+1. From left handside menu select **Resilience Management**
+2. Drill down to the previously created application map
+3. Navigate to **Chaos Experiments**
+4. Select **Only a few**
 
-1. Select the created application map **workshop-am**
-2. Select **Harness Infra**
-
-  ![Screenshot 2024-11-28 at 14 24 21](https://github.com/user-attachments/assets/c47834a3-fe88-44ed-be7e-7cee97bcb303)
-
-  - Click on **"Select a chaos Infrastructure"**
-
- 
-3. On the popup window select the available options
-
-| Input                        | Value|  
-| ---------------------------- | ------ |
-| Select Environment|prod|
-| Select Infrastructure|k8s|
-
-4. Click on next to navigate to the experiment builder
-5. Click on the **plus** icon to add an experiment
-6. Select Add Fault
-7. Search for **pod delete**
-8. Configure the fault accordingly
-
-| Input                        | Value|  
-| ---------------------------- | ------ |
-| Target Workload Kind|deployment|
-| Target Workload Namespace |Select the namespace available from the dropdown|
-| Target Workload Names | Pick the backend deployment name|
-|Target Workload Labels | pick the backend label|
-
-9. For tune fault leave as is and apply changes
-
-Save and run the experiment, observe the logs to see the backend pod deleted
+Observe the auto generated experiments and run the **web-backend experiment**
 
 ---------------
 
