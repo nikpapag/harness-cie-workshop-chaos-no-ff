@@ -380,10 +380,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 9. For tune fault leave as is and apply changes
 
-
-
-
-
+Save and run the experiment, observe the logs to see the backend pod deleted
 
 ---------------
 
