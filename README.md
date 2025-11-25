@@ -344,14 +344,48 @@ The target infrastructure has been pre-created for us and we used it in the prev
 4. Select the relevant services for your project name "use the search function to find the services"
 5. Click Save
 
-**Create Experiments Automatically**
+**Create Chaos Experiment**
 
-1. From the left hand menu, go to **Application Maps**
-2. Select the previously created application map (It is normal for the page to be loading while calculating the resiliency score)
-3. From the navigation menu select **Chaos Experiments**
-4. From the available list of fault profiles select **Only a few**
-5. Double click on the web-frontend experiment and run it
-    1. Observe the logs and validate the application’s resiliency by navigating to the app
+| Input                        | Value|  
+| ---------------------------- | ------ |
+| Name                         |pod-delete|
+
+1. Select the created application map **workshop-am**
+2. Select **Harness Infra**
+
+  ![Screenshot 2024-11-28 at 14 24 21](https://github.com/user-attachments/assets/c47834a3-fe88-44ed-be7e-7cee97bcb303)
+
+  - Click on **"Select a chaos Infrastructure"**
+
+ 
+3. On the popup window select the available options
+
+| Input                        | Value|  
+| ---------------------------- | ------ |
+| Select Environment|prod|
+| Select Infrastructure|k8s|
+
+4. Click on next to navigate to the experiment builder
+5. Click on the **plus** icon to add an experiment
+6. Select Add Fault
+7. Search for **pod delete**
+8. Configure the fault accordingly
+
+| Input                        | Value|  
+| ---------------------------- | ------ |
+| Target Workload Kind|deployment|
+| Target Workload Namespace |Select the namespace available from the dropdown|
+| Target Workload Names | Pick the backend deployment name|
+|Target Workload Labels | pick the backend label|
+
+9. For tune fault leave as is and apply changes
+
+
+
+
+
+
+---------------
 
 **Create Experiments manually**
 
@@ -377,10 +411,17 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | Select Infrastructure|k8s|
 
 5. Click on next to navigate to the experiment builder
-6. Start with blank canvas
-7. Click on **Add Fault**
-8. From the list of available faults select **Pod Memory Hog**
-9. From the navigation bar select **Target Application**
+6. Click on **Add Fault**
+7. From the list of available faults select **Pod Memory Hog**
+8. From the navigation bar select **Target Application**
+
+| Input                        | Value | Notes |
+| ---------------------------- | ------ | -------|
+| Target Workload Kind|deployment||
+| Target Workload Namespace ||**Select the namespace available from the dropdown**|
+| Target Workload Names | Pick the backend deployment name|We will change that later |
+|Target Workload Labels | leave empty||
+
 
 | Input       | Value | Notes       |
 | ----------- | ----- | ----------- |
@@ -389,20 +430,16 @@ The target infrastructure has been pre-created for us and we used it in the prev
 | Target Workload Labels| leave empty | |
 | Name |**select the backend service from the dropdown**| We will change that later |
 
-10. From the navigation bar select **Tune Fault**
+9. From the navigation bar select **Tune Fault**
 
 | Input       | Value |
 | ----------- | ----- |
-| Total Chaos Duration |300|
+| Total Chaos Duration |600|
 | Memory Consumption |300|
 | Number of workers |1|
 | Pod affected percentage|100|
 
-11. Click on **Apply Changes** and then **Save**
-12. In the pipeline click the **Add** icon and select **Add a probe**
-13. Select the default probe and click on **Add to Experiment**
-14. Click on **Apply Changes**
-15. **Save** the experiment
+10. Click on **Apply Changes** and then **Save**
 
 **Change target service to canary using YAML**
 
