@@ -21,4 +21,4 @@ env:
   config:
     HARNESS_BUILD: <+pipeline.sequenceId>
     SERVICE_NAME: <+service.name>
-    ARTIFACT_VERSION: <+artifact.image>
+    APPLICATION_VERSION: <+artifacts.primary.tag>
