@@ -391,13 +391,6 @@ Observe the auto generated experiments and run the **web-backend experiment**
 |Target Workload Labels | leave empty||
 
 
-| Input       | Value | Notes       |
-| ----------- | ----- | ----------- |
-| Select App Kind |deployment| Leave as is |
-| Namespace |**select from the dropdown** | |
-| Target Workload Labels| leave empty | |
-| Name |**select the backend service from the dropdown**| We will change that later |
-
 9. From the navigation bar select **Tune Fault**
 
 | Input       | Value |
