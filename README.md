@@ -315,9 +315,10 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 **Steps**
 
-1. From the module selection menu select chaos engineering
+1. From the module selection menu select **resilience testing**
 
-   ![Screenshot 2024-11-28 at 14 07 39](https://github.com/user-attachments/assets/5c520265-658f-4953-a95c-7a5c3c57ecdf)
+<img width="733" height="402" alt="Screenshot 2026-03-06 at 08 14 35" src="https://github.com/user-attachments/assets/3d6bba05-4189-4c14-893b-cb75e270029d" />
+
 
 4. From the left hand menu, go to **Project Settings**
 5. From the available tiles select “Discovery”
@@ -353,11 +354,108 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 Observe the auto generated experiments and run the **web-backend experiment**
 
+
+
+
 ---------------
 
 **Create Experiments manually**
 
-1. From the left hand menu, go to **Chaos Experiments**
+This time we will create a network corruption experiment
+
+1. From the left hand menu, go to **Chaos Testing**
+2. Select **+New Experiment**
+
+| Input                        | Value|  
+| ---------------------------- | ------ |
+| Name                         |network-corruption|
+
+3. Select **Harness Infra**
+
+  ![Screenshot 2024-11-28 at 14 24 21](https://github.com/user-attachments/assets/c47834a3-fe88-44ed-be7e-7cee97bcb303)
+
+  - Click on **"Select a chaos Infrastructure"**
+
+ 
+4. On the popup window select the available options
+
+| Input                        | Value|  
+| ---------------------------- | ------ |
+| Select Environment|prod|
+| Select Infrastructure|k8s|
+
+5. Click on next to navigate to the experiment builder
+6. Click on **Add Fault**
+7. From the list of available faults select **Pod Network Corruption**
+8. From the navigation bar select **Target Application**
+
+| Input                        | Value | Notes |
+| ---------------------------- | ------ | -------|
+| Target Workload Kind|deployment||
+| Target Workload Namespace ||**Select the namespace available from the dropdown**|
+| Target Workload Names | Pick the backend deployment name|We will change that later |
+|Target Workload Labels | leave empty||
+
+
+9. From the navigation bar select **Tune Fault**
+
+| Input       | Value |
+| ----------- | ----- |
+| Total Chaos Duration |150|
+| Network Packet Corruption Percentage |100|
+10. Click on **Apply Changes** and then **Save**
+11. Run the experiment and observe the logs. 
+12. While the experiment is running navigate to the application's endpoint (see image below)
+13. Observe the network errors
+
+| project                | domain        | suffix |
+| ---------------------- | ------------- | ------ |
+| http\://\<project\_id>|.cie-bootcamp|.co.uk|
+
+<img width="1415" height="205" alt="image" src="https://github.com/user-attachments/assets/cb85c608-bfbb-4ec5-b179-c6ebd6ff394c" />
+
+
+**Validate the health automatically**
+
+1. From the left hand menu, go to **Project Settings**
+2. Select **Chaos Probles**
+3. Create a new probe by clicking **+ New Probe**
+4. Select the HTTP probe
+   
+| Field                | Value        | Notes |
+| ---------------------- | ------------- | ------ |
+| http\://\<project\_id>.cie-bootcamp.co.uk |||
+| Criteria | == | | 
+| Response Code | 200 | | 
+
+5. Move to the next tab **Configure Properties**
+
+
+| Field                | Value        | Notes |
+| ---------------------- | ------------- | ------ |
+| Timeout | 20s ||
+| Interval | 2s | | 
+| Attempt | 5 | | 
+| Initial Delay | 5s ||
+
+Now that we have our probe navigate to **Chaos Testing**
+Drill down to the **network-latency** experiment
+
+Hovering over the network fault we can add our newly created probe 
+Select **+ Add a parallel node -> Add a probe**
+
+<img width="519" height="354" alt="image" src="https://github.com/user-attachments/assets/519fc841-bbf1-4480-a01c-4583eab0b208" />
+
+Save and rerun the experiment 
+Observe the **logs** of the probe **Resilience Score** generated in comparisson to the previous execution
+
+
+
+---------------
+
+**Create Experiments manually**
+
+1. From the left hand menu, go to **Chaos Testing**
 2. Select **+New Experiment**
 
 | Input                        | Value|  
@@ -401,6 +499,7 @@ Observe the auto generated experiments and run the **web-backend experiment**
 | Pod affected percentage|100|
 
 10. Click on **Apply Changes** and then **Save**
+
 
 **Change target service to canary using YAML**
 
@@ -448,12 +547,13 @@ Observe the auto generated experiments and run the **web-backend experiment**
 
 7. Click on Apply Changes
 
-8. Click **Save** and then click **Run** to execute the pipeline with the following inputs. As a bonus, save your inputs as an Input Set before executing (see below)
+8. Click **Save** and then click **Run** to execute the pipeline with the following inputs.
 
 | Input       | Value | Notes       |
 | ----------- | ----- | ----------- |
 | Branch Name |main| Leave as is |
 
+9. After 10 minutes review what happened with the execution 
 
 # Lab 6 - Validate Release
 
